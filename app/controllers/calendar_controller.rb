@@ -1,2 +1,3 @@
 class CalendarController < ApplicationController
+  
 end
