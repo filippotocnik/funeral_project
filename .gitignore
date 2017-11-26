@@ -26,6 +26,6 @@
 .idea/workspace.xml
 
 
-config/secrets.yml
+# config/secrets.yml
 .env
 config/secrets_backup.yml
