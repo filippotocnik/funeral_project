@@ -27,3 +27,5 @@
 
 
 config/secrets.yml
+.env
+config/secrets_backup.yml
