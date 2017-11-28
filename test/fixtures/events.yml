@@ -2,8 +2,12 @@
 
 one:
   name: MyString
-  start_time: 2017-11-27 21:23:09
+  start_time: 2017-11-28 19:33:38
+  end_time: 2017-11-28 19:33:38
+  user: one
 
 two:
   name: MyString
-  start_time: 2017-11-27 21:23:09
+  start_time: 2017-11-28 19:33:38
+  end_time: 2017-11-28 19:33:38
+  user: two
