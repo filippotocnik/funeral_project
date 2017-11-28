@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, except: [:index, :show]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   # GET /events
   # GET /events.json
@@ -71,5 +73,22 @@ class EventsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
       params.require(:event).permit(:name, :start_time, :end_time, :user_id)
+    end
+
+    def logged_in?
+      !!current_user
+    end
+  
+    def require_user
+      if !logged_in?
+        redirect_to root_path
+      end
+    end
+
+    def require_same_user
+      if current_user != @event.user
+        flash[:danger] = 'You can only edit or delete your own articles'
+        redirect_to root_path
+      end
     end
 end
