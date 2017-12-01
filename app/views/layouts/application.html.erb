@@ -9,8 +9,45 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= link_to "Funerals", root_path, class: 'navbar-brand'  %>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+          <ul class="nav navbar-nav">  
+            <li><%= link_to "Register new event", new_event_path  %></li>
+            <li><%= link_to "Event listing", events_path  %></li>
+          </ul>
+          <ul class="nav navbar-right col-md-4" style="margin:0;">
+            <% if current_user %>
+            <li class="col-md-8 user-name">
+              <%= link_to (truncate(current_user.email, length: 25)).html_safe,
+                          edit_user_registration_path, title: 'Edit Profile' %>
+            </li>
+            <li class="col-md-1"></li>
+            <li class="col-md-3 logout"><%= link_to('Logout', destroy_user_session_path, class: 'btn btn-xs btn-danger', title: 'Logout', :method => :delete) %></li>
+          <% else %>
+            <li class="col-md-4 pull-right">
+              <%= link_to('Sign In', new_user_session_path, class: 'btn btn-primary', title: 'Sign In') %>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9">
+          <%= bootstrap_flash %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
