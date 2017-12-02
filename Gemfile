@@ -34,6 +34,7 @@ gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'twitter-bootstrap-rails'
 gem "simple_calendar", "~> 2.0"
+gem 'httparty', '~> 0.15.6'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
