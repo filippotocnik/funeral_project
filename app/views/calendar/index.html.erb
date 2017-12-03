@@ -1,20 +1,27 @@
 <h1>events project</h1>
 
 <%= month_calendar events: @events do |date, events| %>
-  <%= date.day %>.<%= date.month %>.
+  <div class="date">
+    <%= date.day %>.<%= date.month %>.
+  </div>
 
     <% @temperatures.length.times do |i| %>
       <% if date == (@today + i) %>
-        <%= @temperatures[i] %>
-        <%= @forecasts[i] %>
-        <%= image_tag "http://openweathermap.org/img/w/#{@icons[i]}.png"  %>
+        <div class="weather">
+        <p>Weather forecast:</p>
+          <ul>
+            <li><%= @temperatures[i] %>°C</li>
+            <li><%= @forecasts[i] %></li>
+            <li><%= image_tag "http://openweathermap.org/img/w/#{@icons[i]}.png" %></li>
+          </ul>
+        </div>
       <% end %>
     <% end %>
   
 
   <% events.each do |event| %>
-    <div>
-      <%= event.name %>
+    <div class="event">
+      <%= link_to event.name, event_path(event) %>
     </div>
   <% end %>
 <% end %>
