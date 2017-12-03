@@ -88,7 +88,7 @@ class EventsController < ApplicationController
     def require_same_user
       if current_user != @event.user
         flash[:danger] = 'You can only edit or delete your own articles'
-        redirect_to root_path
+        redirect_to events_path
       end
     end
 end
