@@ -18,7 +18,8 @@
 
   <div class="field">
     <%= form.label :start_time %>
-    <%= form.datetime_select :start_time, id: :event_start_time, min: Date.today %>
+    <%#= form.datetime_select :start_time, id: :event_start_time, min: Date.today %>
+    <%= form.datetime_select :start_time, id: :event_start_time, minute_step: 60, start_hour: 8, end_hour: 20 %>
   </div>
 
   <!--<div class="field">
