@@ -35,6 +35,7 @@ gem 'devise-bootstrap-views'
 gem 'twitter-bootstrap-rails'
 gem "simple_calendar", "~> 2.0"
 gem 'httparty', '~> 0.15.6'
+gem 'validates_overlap', '~> 0.8.6'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
