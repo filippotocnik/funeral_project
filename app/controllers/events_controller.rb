@@ -28,7 +28,6 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user = current_user
-    @event.end_time = @event.start_time + 2.hours
 
     respond_to do |format|
       if @event.save
