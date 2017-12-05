@@ -20,8 +20,8 @@
         <%= link_to "Funerals", root_path, class: 'navbar-brand'  %>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">  
-            <li><%= link_to "Register new event", new_event_path  %></li>
-            <li><%= link_to "Event listing", events_path  %></li>
+            <li><%= link_to "Register new funeral", new_event_path  %></li>
+            <li><%= link_to "Funeral listing", events_path  %></li>
           </ul>
           <ul class="nav navbar-right col-md-4" style="margin:0;">
             <% if current_user %>
@@ -43,7 +43,7 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12 col-md-12 col-xs-12">
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
