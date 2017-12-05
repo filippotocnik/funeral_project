@@ -36,6 +36,7 @@ gem 'twitter-bootstrap-rails'
 gem "simple_calendar", "~> 2.0"
 gem 'httparty', '~> 0.15.6'
 gem 'validates_overlap'
+gem 'jquery-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
