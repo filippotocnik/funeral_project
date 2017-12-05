@@ -16,8 +16,8 @@
     <% @events.each do |event| %>
       <tr>
         <td><%= event.name %></td>
-        <td><%= event.start_time.strftime("%D - %H:%M") %></td>
-        <td><%= event.end_time.strftime("%D - %H:%M") %></td>
+        <td><%= event.start_time.strftime("%d/%b/%Y - %H:%M") %></td>
+        <td><%= event.end_time.strftime("%d/%b/%Y - %H:%M") %></td>
         <td><%= link_to 'Show', event %></td>
         <% if user_signed_in? && current_user == event.user %>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
